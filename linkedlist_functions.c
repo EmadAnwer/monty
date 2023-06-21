@@ -26,6 +26,7 @@ size_t print_stack(const stack_t *h)
  */
 stack_t *add_stackint(stack_t **head, const int n)
 {
+	
 	stack_t *new_node;
 
 	new_node = malloc(sizeof(stack_t));

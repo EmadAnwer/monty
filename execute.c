@@ -6,7 +6,6 @@ int execute_file(char *file_name)
 	char *line = NULL;
 	size_t line_length = 0;
 	ssize_t read;
-	int line_number = 0;
 	/*Open the file*/
 	file = fopen(file_name, "r");
 	if (file == NULL)
@@ -15,32 +14,24 @@ int execute_file(char *file_name)
 	/*Read and execute each line until the end of the file*/
 	while ((read = getline(&line, &line_length, file)) != -1)
 	{
-		line_number++;
-		printf("%s", line);
-		/*execute_line(line, );*/
+		my_data.line_number++;
+		my_data.line = &line;
+		execute_line(*my_data.line, my_data.line_number);
 	}
 
 	fclose(file);
-	/*
-	TODO: free memory
-	*/
 }
 
 void execute_line(char *line, int line_number)
 {
+	int i;
 	char *opcode_instruction;
 	instruction_t instructions[] = {{"push", push}, {"pall", pall}};
 	/*strtok*/
-	
-	
-}
-
-int get_opcode_function_number(char *opcode_instruction)
-{
-	int i;
-
-	for (i = 0; opcode_instructions[i]; i++)
-		if (strcmp(opcode_instruction, opcode_instructions) == 0)
-			return (i);
-	return (-1);
+	opcode_instruction = strtok(line, " ");
+	my_data.line = &line;
+	my_data.opcode = &opcode_instruction;
+	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
+		if (strcmp(opcode_instruction, instructions[i].opcode) == 0)
+			instructions[i].f(my_data.stack, my_data.line_number);
 }
