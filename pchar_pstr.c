@@ -10,15 +10,10 @@ void pchar(stack_t **stack, unsigned int line_number)
 		print_pchar_error(line_number);
 
 	num = (*stack)->n ;
-	if ((*stack)->n)
-	{
-		if (num >= 0 && num <= 127) 
-		{
+	if (num >= 65 && num <= 122) 
 		printf("%c\n", num);
-		}
-		else
-			print_pchar_error(line_number);
-	}
+	else
+		print_pchar_error(line_number);
 }
 
 
