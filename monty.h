@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,10 +30,11 @@ typedef struct stack_s
 typedef struct my_data_s
 {
 	int line_number;
-	char **opcode;
-	char **line;
-	stack_t **stack;
+	char **line_vactior;
+	stack_t *stack;
 } my_data_t;
+
+extern my_data_t my_data;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -66,8 +67,7 @@ void push(stack_t **stack, unsigned int line_number);
 
 /*linked list functions*/
 size_t print_stack(const stack_t *h);
-stack_t *add_stackint(stack_t **head, const int n);
-stack_t *add_stackint_end(stack_t **head, const int n);
+stack_t *add_dnodeint(stack_t **head, const int n);
 void free_stack(stack_t *head);
 void delete_top_node(stack_t **stack);
 
@@ -75,5 +75,6 @@ void delete_top_node(stack_t **stack);
 /*helper*/
 int is_number(const char *str);
 
-extern my_data_t my_data;
+
+void freeCharVector(char **vector, int size);
 #endif /*MONTY_H*/
