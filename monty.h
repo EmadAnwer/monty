@@ -6,7 +6,7 @@
 #include <string.h>
 #include <sys/types.h>
 #define UNUSED(x) (void)(x)
-#define INSTRUCTIONS_COUNT 14
+#define INSTRUCTIONS_COUNT 15
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
