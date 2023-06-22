@@ -17,5 +17,6 @@ void nop(stack_t **stack, unsigned int line_number)
 void print_empty_stack_error(int line_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack", line_number);
+	free_everything();
 	exit(EXIT_FAILURE);
 }
