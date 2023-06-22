@@ -113,5 +113,6 @@ void delete_top_node(stack_t **stack)
 	{
 		(*stack)->prev = NULL;
 	}
+	temp->next = NULL;
 	free(temp);
 }
