@@ -6,8 +6,9 @@
 #include <string.h>
 #include <sys/types.h>
 #define UNUSED(x) (void)(x)
-#define INSTRUCTIONS_COUNT 15
-
+#define INSTRUCTIONS_COUNT 17
+#define STACK 1
+#define QUEUE 0
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,6 +36,7 @@ typedef struct my_data_s
 	stack_t *stack;
 	FILE *file;
 	char *line;
+	int mode;
 } my_data_t;
 
 extern my_data_t my_data;
@@ -89,7 +91,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
-
+void queue(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
 
 /*linked list functions*/
 size_t print_stack(const stack_t *h);

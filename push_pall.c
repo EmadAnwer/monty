@@ -15,7 +15,10 @@ void push(stack_t **stack, unsigned int line_number)
 		if(is_num(my_data.arg2))
 		{
 			num = atoi(my_data.arg2);
-			add_dnodeint(stack, num);
+			if(my_data.mode == STACK)
+				add_dnodeint(stack, num);
+			else
+				add_stackint_end(stack, num);
 		}
 		else
 			print_push_error(line_number);

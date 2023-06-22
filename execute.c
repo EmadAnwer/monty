@@ -61,6 +61,8 @@ void execute_line(char *line, int line_number)
 			{"pstr", pstr},
 			{"rotl", rotl},
 			{"rotr", rotr},
+			{"stack", stack},
+			{"queue", queue},
 		};
 	/*strtok*/
 	my_data.arg1 = strtok(line, " \n");
