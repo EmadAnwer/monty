@@ -6,6 +6,7 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
+	/* Check if the stack or the top element is empty */
 	if (stack == NULL || *stack == NULL)
 		print_empty_stack_error(line_number);
 
