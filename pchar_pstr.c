@@ -12,7 +12,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 	num = (*stack)->n ;
 	if ((*stack)->n)
 	{
-		if (num >= 0 && num <= 127) 
+		if (num >= 65 && num <= 122) 
 		{
 		printf("%c\n", num);
 		}
