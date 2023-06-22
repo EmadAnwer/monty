@@ -28,9 +28,34 @@ void print_pint_error(int line_number)
 }
 
 
+/*
 
+	The opcode swap swaps the top two elements of the stack.
+
+	If the stack contains less than two elements
+		print the error message L<line_number>: can't swap, stack too short,
+
+
+*/
 void swap(stack_t **stack, unsigned int line_number)
 {
-	UNUSED(stack);
-	UNUSED(line_number);
+	int tmp;
+
+	if((*stack)->next)
+	{
+		tmp = (*stack)->n;
+		(*stack)->n = (*stack)->next->n;
+		(*stack)->next->n = tmp;
+	}
+	else
+		print_swap_error(line_number);
+}
+
+
+void print_swap_error(int line_number)
+{
+	
+	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+	free_everything();
+	exit(EXIT_FAILURE);
 }
