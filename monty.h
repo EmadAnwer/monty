@@ -62,6 +62,7 @@ void print_empty_stack_error(int line_number);
 void print_pint_error(int line_number);
 void print_swap_error(int line_number);
 void print_add_error(int line_number);
+void print_sub_error(int line_number);
 /*execute functions*/
 int execute_file(char *file_name);
 void execute_line(char *line, int line_number);
