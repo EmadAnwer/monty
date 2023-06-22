@@ -11,7 +11,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	print_stack(*stack);
 }
 /**
- * push - .
+ * push - Pushes an element onto the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
  */
