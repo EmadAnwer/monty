@@ -16,10 +16,21 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL || *stack == NULL)
-		print_pint_error(line_number);
+	stack_t *c;
 
-	printf("%d\n", (*stack)->n);
+	UNUSED(line_number);
+	c = *stack;
+	while (c)
+	{
+		if ((c->n >= 65 && c->n <= 90) || (c->n >= 97 && c->n <= 122))
+		{
+			printf("%c", c->n);
+			c = c->next;
+		}
+		else
+			break;
+	}
+	printf("\n");
 }
 
 void print_pchar_error(int line_number)
@@ -28,7 +39,6 @@ void print_pchar_error(int line_number)
 	free_everything();
 	exit(EXIT_FAILURE);
 }
-
 
 void print_pchar_stack_empty_error(int line_number)
 {
