@@ -8,6 +8,7 @@
 size_t print_stack(const stack_t *h)
 {
 	int i = 0;
+
 	while (h)
 	{
 		printf("%d\n", h->n);
@@ -18,10 +19,11 @@ size_t print_stack(const stack_t *h)
 }
 
 /**
- * add_stack - add new node at the beginning of a stack_t list.
- * @head: pointer to head pointer
- * @n: integer value
- * Return: node address or null in fail
+ * add_dnodeint - Adds a new node at the beginning of a doubly linked list
+ * @head: Pointer to the head of the list
+ * @n: Value to store in the new node
+ *
+ * Return: Pointer to the new node, or NULL on failure
  */
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
@@ -95,12 +97,13 @@ void free_stack(stack_t *head)
 }
 
 /**
- * free_stack - free all the elements of a stack_t list.
- * @head: pointer to stack_t
+ * delete_top_node - free all the elements of a stack_t list.
+ * @stack: pointer to stack_t
  */
 void delete_top_node(stack_t **stack)
 {
 	stack_t *temp;
+
 	if (*stack == NULL)
 	{
 		printf("Error: Stack is empty.\n");

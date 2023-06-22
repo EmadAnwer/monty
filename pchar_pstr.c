@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * pchar - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	int num;
@@ -13,7 +17,11 @@ void pchar(stack_t **stack, unsigned int line_number)
 	else
 		print_pchar_error(line_number);
 }
-
+/**
+ * pstr - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *c;
@@ -33,6 +41,10 @@ void pstr(stack_t **stack, unsigned int line_number)
 	printf("\n");
 }
 
+/**
+ * print_pchar_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_pchar_error(int line_number)
 {
 	fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
@@ -40,6 +52,10 @@ void print_pchar_error(int line_number)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * print_pchar_stack_empty_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_pchar_stack_empty_error(int line_number)
 {
 	fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);

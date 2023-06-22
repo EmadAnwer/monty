@@ -1,13 +1,10 @@
 #include "monty.h"
 
-/*
-
-	prints the value at the top of the stack, followed by a new line.
-	If the stack is empty,
-		print the error message "L<line_number>: can't pint, stack empty"
-		, followed by a new line, and exit
-
-*/
+/**
+ * pint - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
@@ -15,7 +12,10 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	printf("%d\n", (*stack)->n);
 }
-
+/**
+ * print_pint_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_pint_error(int line_number)
 {
 
@@ -24,22 +24,18 @@ void print_pint_error(int line_number)
 	exit(EXIT_FAILURE);
 }
 
-/*
-
-	The opcode swap swaps the top two elements of the stack.
-
-	If the stack contains less than two elements
-		print the error message L<line_number>: can't swap, stack too short,
-
-
-*/
+/**
+ * swap - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int tmp;
 
 	if (stack == NULL || *stack == NULL)
 		print_swap_error(line_number);
-		
+
 	if ((*stack)->next)
 	{
 		tmp = (*stack)->n;
@@ -49,7 +45,10 @@ void swap(stack_t **stack, unsigned int line_number)
 	else
 		print_swap_error(line_number);
 }
-
+/**
+ * print_swap_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_swap_error(int line_number)
 {
 

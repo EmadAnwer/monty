@@ -2,6 +2,11 @@
 
 
 
+/**
+ * _div - .
+ * @stack: Pointer to the stack
+ * @line_number: Line number of the current operation
+ */
 void _div(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
@@ -19,7 +24,11 @@ void _div(stack_t **stack, unsigned int line_number)
 
 }
 
-
+/**
+ * mul - .
+ * @stack: Pointer to the stack
+ * @line_number: Line number of the current operation
+ */
 void mul(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
@@ -35,7 +44,10 @@ void mul(stack_t **stack, unsigned int line_number)
 
 }
 
-
+/**
+ * print_mul_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_mul_error(int line_number)
 {
 
@@ -43,7 +55,10 @@ void print_mul_error(int line_number)
 	free_everything();
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * print_div_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_div_error(int line_number)
 {
 
@@ -52,7 +67,10 @@ void print_div_error(int line_number)
 	exit(EXIT_FAILURE);
 }
 
-
+/**
+ * print_div_by_zero_error - .
+ * @line_number: Line number of the current operation
+ */
 void print_div_by_zero_error(int line_number)
 {
 

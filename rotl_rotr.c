@@ -1,17 +1,15 @@
 #include "monty.h"
 
-/*
-
-
-	2 3 4 5 6 7 8 9 0
-
-rotl
-
-*/
+/**
+ * rotl - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	int top = 0;
 	stack_t *c = NULL;
+
 	UNUSED(line_number);
 	if (stack != NULL && *stack != NULL && (*stack)->next != NULL)
 	{
@@ -26,10 +24,16 @@ void rotl(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * rotr - .
+ * @stack: Pointer to the top of the stack
+ * @line_number: Line number of the current operation
+ */
 void rotr(stack_t **stack, unsigned int line_number)
 {
 	int last = 0;
 	stack_t *c = NULL;
+
 	UNUSED(line_number);
 
 	if (stack != NULL && *stack != NULL && (*stack)->next != NULL)

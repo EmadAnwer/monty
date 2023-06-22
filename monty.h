@@ -26,7 +26,15 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * TODO
+ * struct my_data_s - Struct to hold data for the Monty interpreter
+ *
+ * @line_number: The current line number being executed
+ * @arg1: The first argument of the current line being executed (if any)
+ * @arg2: The second argument of the current line being executed (if any)
+ * @stack: Pointer to the top of the stack
+ * @file: Pointer to the file being executed
+ * @line: Pointer to the current line being executed
+ * @mode: The mode of the Monty interpreter (STACK or QUEUE)
  */
 typedef struct my_data_s
 {
@@ -56,9 +64,10 @@ typedef struct instruction_s
 
 /*error functions*/
 void print_open_file_error(char *file_name);
-void print_usage_error();
-void print_invalid_instruction_error(int line_number, char *opcode_instruction);
-void print_malloc_error();
+void print_usage_error(void);
+void print_invalid_instruction_error
+					(int line_number, char *opcode_instruction);
+void print_malloc_error(void);
 void print_push_error(int line_number);
 void print_empty_stack_error(int line_number);
 void print_pint_error(int line_number);
@@ -103,7 +112,7 @@ stack_t *add_stackint_end(stack_t **head, const int n);
 
 /*helper*/
 
-void free_everything();
+void free_everything(void);
 
 int is_empty_line(char *line);
 int is_num(char *num);
