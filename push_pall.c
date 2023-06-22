@@ -17,6 +17,8 @@ void push(stack_t **stack, unsigned int line_number)
 			num = atoi(my_data.arg2);
 			add_dnodeint(stack, num);
 		}
+		else
+			print_push_error(line_number);
 			
 	}
 	else
