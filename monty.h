@@ -68,6 +68,7 @@ void print_div_by_zero_error(int line_number);
 void print_mul_error(int line_number);
 void print_mod_error(int line_number);
 void print_pchar_error(int line_number);
+void print_pchar_stack_empty_error(int line_number);
 /*execute functions*/
 int execute_file(char *file_name);
 void execute_line(char *line, int line_number);
