@@ -31,7 +31,7 @@ void execute_line(char *line, int line_number)
 {
 	int i;
 	int is_instruction = -1;
-	instruction_t instructions[] = {{"push", push}, {"pall", pall}};
+	instruction_t instructions[] = {{"push", push}, {"pall", pall}, {"pint", pint}};
 	/*strtok*/
 	my_data.arg1 = strtok(line, " \n");
 	my_data.arg2 = strtok(NULL, " \n");
