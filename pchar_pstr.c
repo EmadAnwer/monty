@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
- * pchar - .
+ * pchar -  Prints the character representation of the top element in the stack
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return: Nothing
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
