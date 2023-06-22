@@ -32,6 +32,8 @@ typedef struct my_data_s
 	int line_number;
 	char **line_vactior;
 	stack_t *stack;
+	FILE *file;
+	char *line;
 } my_data_t;
 
 extern my_data_t my_data;
@@ -73,8 +75,7 @@ void delete_top_node(stack_t **stack);
 
 
 /*helper*/
-int is_number(const char *str);
 
-
-void freeCharVector(char **vector, int size);
+void free_everything();
+void free_vector(char **argv);
 #endif /*MONTY_H*/

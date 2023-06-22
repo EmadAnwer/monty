@@ -10,12 +10,13 @@ int execute_file(char *file_name)
 	file = fopen(file_name, "r");
 	if (file == NULL)
 		print_open_file_error(file_name);
-
+	my_data.file = file;
 	/*Read and execute each line until the end of the file*/
 	while ((read = getline(&line, &line_length, file)) != -1)
 	{
 
 		my_data.line_number++;
+		my_data.line = line;
 		execute_line(line, my_data.line_number);
 		
 	}
@@ -31,10 +32,12 @@ void execute_line(char *line, int line_number)
 	char *tok;
 	instruction_t instructions[] = {{"push", push}, {"pall", pall}};
 	/*strtok*/
-	my_data.line_vactior = malloc(sizeof(char *) * 2);
+	my_data.line_vactior = malloc(sizeof(char *) * 3);
 	if (my_data.line_vactior == NULL)
 		print_malloc_error();
-
+	
+	my_data.line_vactior[0] = NULL;
+    my_data.line_vactior[1] = NULL;
 	tok = strtok(line, " \n");
 	my_data.line_vactior[0] = malloc(strlen(tok) + 1);
 	if (my_data.line_vactior[0] == NULL)
@@ -54,20 +57,20 @@ void execute_line(char *line, int line_number)
 		if (strcmp(my_data.line_vactior[0], instructions[i].opcode) == 0)
 			instructions[i].f(&my_data.stack, line_number);
 	
-	freeCharVector(my_data.line_vactior, 2);
+	free_vector(my_data.line_vactior);
 }
 
-void freeCharVector(char **vector, int size)
+void free_vector(char **argv)
 {
-	int i;
-	/*Free the memory for each string in the vector*/
-	for (i = 0; i < size; i++)
+	int i = 0;
+	if (argv == NULL)
+		return;
+
+	for (i = 0; i < 2; i++)
 	{
-		free(vector[i]);
+		if (argv[i] != NULL)
+			free(argv[i]);
 	}
 
-	/*Free the memory for the vector itself*/
-	free(vector);
-
-	
+	free(argv);
 }
