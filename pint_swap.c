@@ -26,3 +26,11 @@ void print_pint_error(int line_number)
 	free_everything();
 	exit(EXIT_FAILURE);
 }
+
+
+
+void swap(stack_t **stack, unsigned int line_number)
+{
+	UNUSED(stack);
+	UNUSED(line_number);
+}
