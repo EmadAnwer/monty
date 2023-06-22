@@ -10,10 +10,10 @@ rotl
 */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	int top;
-	stack_t *c;
+	int top = 0;
+	stack_t *c = NULL;
 	UNUSED(line_number);
-	if (stack != NULL || *stack != NULL || (*stack)->next != NULL)
+	if (stack != NULL && *stack != NULL && (*stack)->next != NULL)
 	{
 		top = (*stack)->n;
 		c = *stack;
