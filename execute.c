@@ -17,7 +17,8 @@ int execute_file(char *file_name)
 
 		my_data.line_number++;
 		my_data.line = line;
-		execute_line(line, my_data.line_number);
+		if(is_empty_line(my_data.line) == 1)
+			execute_line(my_data.line, my_data.line_number);
 		
 	}
 	free_stack(my_data.stack);
@@ -29,48 +30,37 @@ int execute_file(char *file_name)
 void execute_line(char *line, int line_number)
 {
 	int i;
-	char *tok;
+
 	instruction_t instructions[] = {{"push", push}, {"pall", pall}};
 	/*strtok*/
-	my_data.line_vactior = malloc(sizeof(char *) * 3);
-	if (my_data.line_vactior == NULL)
-		print_malloc_error();
-	
-	my_data.line_vactior[0] = NULL;
-    my_data.line_vactior[1] = NULL;
-	tok = strtok(line, " \n");
-	my_data.line_vactior[0] = malloc(strlen(tok) + 1);
-	if (my_data.line_vactior[0] == NULL)
-		print_malloc_error();
-	strcpy(my_data.line_vactior[0], tok);
-
-	tok = strtok(NULL, " \n");
-	if (tok)
-	{
-		my_data.line_vactior[1] = malloc(strlen(tok) + 1);
-		if (my_data.line_vactior[1] == NULL)
-			print_malloc_error();
-		strcpy(my_data.line_vactior[1], tok);
-	}
+	my_data.arg1 = strtok(line, " \n");
+	my_data.arg2 = strtok(NULL, " \n");
 
 	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
-		if (strcmp(my_data.line_vactior[0], instructions[i].opcode) == 0)
+		if (strcmp(my_data.arg1, instructions[i].opcode) == 0)
 			instructions[i].f(&my_data.stack, line_number);
-	
-	free_vector(my_data.line_vactior);
+
 }
 
-void free_vector(char **argv)
+int is_empty_line(char *line)
 {
-	int i = 0;
-	if (argv == NULL)
-		return;
+	int i;
+    int length = strlen(line);
 
-	for (i = 0; i < 2; i++)
-	{
-		if (argv[i] != NULL)
-			free(argv[i]);
-	}
+    if (length > 0)
+    {
+        /* Check if the line ends with '\n'*/
+        if (line[length - 1] == '\n')
+        {
+            /*Check if the line contains any characters before '\n'*/
+            for (i = 0; i < length - 1; i++)
+            {
+                if (line[i] != ' ')
+                    return 1;
+            }
+            return 0;
+        }
+    }
 
-	free(argv);
+    return 0;
 }

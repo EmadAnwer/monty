@@ -30,7 +30,8 @@ typedef struct stack_s
 typedef struct my_data_s
 {
 	int line_number;
-	char **line_vactior;
+	char *arg1;
+	char *arg2;
 	stack_t *stack;
 	FILE *file;
 	char *line;
@@ -77,5 +78,6 @@ void delete_top_node(stack_t **stack);
 /*helper*/
 
 void free_everything();
-void free_vector(char **argv);
+
+int is_empty_line(char *line);
 #endif /*MONTY_H*/

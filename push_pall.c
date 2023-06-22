@@ -11,8 +11,8 @@ void push(stack_t **stack, unsigned int line_number)
 	int num = 0;
 	UNUSED(line_number);
 
-		if (my_data.line_vactior[1])
-			num = atoi(my_data.line_vactior[1]);
+		if (my_data.arg2)
+			num = atoi(my_data.arg2);
 		else
 			print_push_error(line_number);
 
@@ -30,7 +30,6 @@ void print_push_error(int line_number)
 void free_everything()
 {
 	free_stack(my_data.stack);
-	free_vector(my_data.line_vactior);
 	fclose(my_data.file);
 	free(my_data.line);
 }
