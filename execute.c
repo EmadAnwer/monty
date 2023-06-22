@@ -30,7 +30,7 @@ int execute_file(char *file_name)
 void execute_line(char *line, int line_number)
 {
 	int i;
-
+	int is_instruction = -1;
 	instruction_t instructions[] = {{"push", push}, {"pall", pall}};
 	/*strtok*/
 	my_data.arg1 = strtok(line, " \n");
@@ -38,8 +38,18 @@ void execute_line(char *line, int line_number)
 
 	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
 		if (strcmp(my_data.arg1, instructions[i].opcode) == 0)
-			instructions[i].f(&my_data.stack, line_number);
-
+		{
+			is_instruction = i;
+			break;
+		}
+			
+	
+	if(is_instruction != -1)
+		instructions[i].f(&my_data.stack, line_number);
+	else
+		print_invalid_instruction_error(line_number, my_data.arg1);
+	
+	
 }
 
 int is_empty_line(char *line)

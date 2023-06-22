@@ -44,7 +44,6 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	return (new_node);
 }
 
-
 /**
  * add_stackint_end - add new node at the end of a stack_t list.
  * @head: pointer to head pointer
@@ -74,10 +73,8 @@ stack_t *add_stackint_end(stack_t **head, const int n)
 		current->next = new_node;
 	}
 
-
 	return (new_node);
 }
-
 
 /**
  * free_stack - free all the elements of a stack_t list.
@@ -97,7 +94,6 @@ void free_stack(stack_t *head)
 	}
 }
 
-
 /**
  * free_stack - free all the elements of a stack_t list.
  * @head: pointer to stack_t
@@ -107,15 +103,15 @@ void delete_top_node(stack_t **stack)
 	stack_t *temp;
 	if (*stack == NULL)
 	{
-        printf("Error: Stack is empty.\n");
-        return;
-    }
+		printf("Error: Stack is empty.\n");
+		return;
+	}
 
-    temp = *stack;
-    *stack = (*stack)->next;
-    if (*stack != NULL)
+	temp = *stack;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
 	{
-        (*stack)->prev = NULL;
-    }
-    free(temp);
+		(*stack)->prev = NULL;
+	}
+	free(temp);
 }

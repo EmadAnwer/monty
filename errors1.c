@@ -15,8 +15,9 @@ void print_open_file_error(char *file_name)
 
 void print_invalid_instruction_error(int line_number, char *opcode_instruction)
 {
-	free_everything();
+	
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode_instruction);
+	free_everything();
 	exit(EXIT_FAILURE);
 }
 
