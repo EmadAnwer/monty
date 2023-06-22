@@ -26,7 +26,8 @@ void nop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * print_empty_stack_error - .
+ * print_empty_stack_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
  */
 void print_empty_stack_error(int line_number)
