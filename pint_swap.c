@@ -26,7 +26,7 @@ void print_pint_error(int line_number)
 }
 
 /**
- * swap - .
+ * swap - Swaps the positions of the top two elements in the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
  */
