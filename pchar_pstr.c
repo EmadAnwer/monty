@@ -53,8 +53,10 @@ void print_pchar_error(int line_number)
 }
 
 /**
- * print_pchar_stack_empty_error - .
+ * print_pchar_stack_empty_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
+ * Return : Nothing
  */
 void print_pchar_stack_empty_error(int line_number)
 {
