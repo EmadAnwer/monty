@@ -12,7 +12,7 @@ rotl
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	UNUSED(line_number);
-	if(stack != NULL || *stack != NULL)
+	if(stack != NULL || *stack != NULL || (*stack)->next != NULL)
 	{
 		add_stackint_end(stack , (*stack)->n);
 		delete_top_node(stack);
