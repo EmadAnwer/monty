@@ -6,7 +6,7 @@
 #include <string.h>
 #include <sys/types.h>
 #define UNUSED(x) (void)(x)
-#define INSTRUCTIONS_COUNT 13
+#define INSTRUCTIONS_COUNT 14
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -60,6 +60,7 @@ void print_malloc_error();
 void print_push_error(int line_number);
 void print_empty_stack_error(int line_number);
 void print_pint_error(int line_number);
+void print_swap_error(int line_number);
 /*execute functions*/
 int execute_file(char *file_name);
 void execute_line(char *line, int line_number);
@@ -71,7 +72,8 @@ void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
