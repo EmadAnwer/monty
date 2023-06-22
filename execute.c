@@ -17,8 +17,7 @@ int execute_file(char *file_name)
 		my_data.line_number++;
 		my_data.line = line;
 		if (is_empty_line(my_data.line) == 1)
-			if (my_data.line[0] != '#')
-				execute_line(my_data.line, my_data.line_number);
+			execute_line(my_data.line, my_data.line_number);
 	}
 	free_stack(my_data.stack);
 	fclose(file);
@@ -67,6 +66,11 @@ void execute_line(char *line, int line_number)
 	my_data.arg1 = strtok(line, " \n");
 	my_data.arg2 = strtok(NULL, " \n");
 
+	if (my_data.arg1[0] == '#')
+	{
+		nop(&my_data.stack, line_number);
+		return;
+	}
 	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
 		if (strcmp(my_data.arg1, instructions[i].opcode) == 0)
 		{
@@ -74,7 +78,6 @@ void execute_line(char *line, int line_number)
 			is_instruction = i;
 			break;
 		}
-
 	if (is_instruction != -1)
 		instructions[i].f(&my_data.stack, line_number);
 	else
