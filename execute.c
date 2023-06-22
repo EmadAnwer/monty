@@ -22,6 +22,7 @@ int execute_file(char *file_name)
 	free_stack(my_data.stack);
 	fclose(file);
 	free(line);
+	return (0);
 }
 
 void execute_line(char *line, int line_number)
@@ -51,7 +52,7 @@ void execute_line(char *line, int line_number)
 
 	for (i = 0; i < INSTRUCTIONS_COUNT; i++)
 		if (strcmp(my_data.line_vactior[0], instructions[i].opcode) == 0)
-			instructions[i].f(&my_data.stack, my_data.line_number);
+			instructions[i].f(&my_data.stack, line_number);
 	
 	freeCharVector(my_data.line_vactior, 2);
 }

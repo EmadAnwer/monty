@@ -104,13 +104,14 @@ void free_stack(stack_t *head)
  */
 void delete_top_node(stack_t **stack)
 {
+	stack_t *temp;
 	if (*stack == NULL)
 	{
         printf("Error: Stack is empty.\n");
         return;
     }
 
-    stack_t *temp = *stack;
+    temp = *stack;
     *stack = (*stack)->next;
     if (*stack != NULL)
 	{
