@@ -31,7 +31,7 @@ void add(stack_t **stack, unsigned int line_number)
 void mod(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		print_div_error(line_number);
+		print_mod_error(line_number);
 
 	if ((*stack)->next)
 	{
@@ -41,7 +41,7 @@ void mod(stack_t **stack, unsigned int line_number)
 		delete_top_node(stack);
 	}
 	else
-		print_div_error(line_number);
+		print_mod_error(line_number);
 }
 
 void print_mod_error(int line_number)
