@@ -21,6 +21,7 @@ void pchar(stack_t **stack, unsigned int line_number)
  * pstr - Prints the string representation of the integers in the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return : Nothing
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
