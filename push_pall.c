@@ -37,7 +37,7 @@ void push(stack_t **stack, unsigned int line_number)
 		print_push_error(line_number);
 }
 /**
- * print_push_error - .
+ * print_push_error - Prints an error message and terminates the program
  * @line_number: Line number of the current operation
  */
 void print_push_error(int line_number)
