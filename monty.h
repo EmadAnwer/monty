@@ -80,4 +80,5 @@ void delete_top_node(stack_t **stack);
 void free_everything();
 
 int is_empty_line(char *line);
+int is_num(char *num);
 #endif /*MONTY_H*/
