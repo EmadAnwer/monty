@@ -48,6 +48,7 @@ void execute_line(char *line, int line_number)
 	instruction_t instructions[] =
 		{
 			{"push", push},
+			{"pop", pop},
 			{"pall", pall},
 			{"pint", pint},
 			{"swap", swap},
