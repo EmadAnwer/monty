@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pint - .
+ * pint - Prints the value of the top element in the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
  */
@@ -13,7 +13,8 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 /**
- * print_pint_error - .
+ * print_pint_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
  */
 void print_pint_error(int line_number)
@@ -25,7 +26,7 @@ void print_pint_error(int line_number)
 }
 
 /**
- * swap - .
+ * swap - Swaps the positions of the top two elements in the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
  */
@@ -46,7 +47,8 @@ void swap(stack_t **stack, unsigned int line_number)
 		print_swap_error(line_number);
 }
 /**
- * print_swap_error - .
+ * print_swap_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
  */
 void print_swap_error(int line_number)

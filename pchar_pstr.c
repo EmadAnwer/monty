@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
- * pchar - .
+ * pchar -  Prints the character representation of the top element in the stack
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return: Nothing
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
@@ -18,9 +19,10 @@ void pchar(stack_t **stack, unsigned int line_number)
 		print_pchar_error(line_number);
 }
 /**
- * pstr - .
+ * pstr - Prints the string representation of the integers in the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return : Nothing
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
@@ -42,8 +44,10 @@ void pstr(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * print_pchar_error - .
+ * print_pchar_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
+ * Return : Nothing
  */
 void print_pchar_error(int line_number)
 {
@@ -53,8 +57,10 @@ void print_pchar_error(int line_number)
 }
 
 /**
- * print_pchar_stack_empty_error - .
+ * print_pchar_stack_empty_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
+ * Return : Nothing
  */
 void print_pchar_stack_empty_error(int line_number)
 {

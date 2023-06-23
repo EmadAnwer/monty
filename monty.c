@@ -2,7 +2,7 @@
 
 my_data_t my_data = {0, NULL, NULL, NULL, NULL, NULL, STACK};
 /**
- * main - Entry point for the Monty interpreter
+ * main - Entry point for the Monty interpreter program
  * @argc: Number of arguments
  * @argv: Array of argument strings
  *

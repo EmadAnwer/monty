@@ -1,7 +1,9 @@
 #include "monty.h"
 /**
- * print_sub_error - .
- * @line_number: Line number of the current operation
+ * print_sub_error - Prints an error message and terminates the program
+ * if the stack is too short for the "sub" operation.
+ * @line_number: Line number of the current operation.
+ * Return: Nothing
  */
 void print_sub_error(int line_number)
 {

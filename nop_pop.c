@@ -1,20 +1,23 @@
 #include "monty.h"
 /**
- * pop - .
+ * pop - Removes the top element from the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return: Nothing
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
+	/* Check if the stack or the top element is empty */
 	if (stack == NULL || *stack == NULL)
 		print_empty_stack_error(line_number);
 
 	delete_top_node(stack);
 }
 /**
- * nop - .
+ * nop - Removes the top element from the stack.
  * @stack: Pointer to the top of the stack
  * @line_number: Line number of the current operation
+ * Return :Nothing
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
@@ -23,7 +26,8 @@ void nop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * print_empty_stack_error - .
+ * print_empty_stack_error - Prints an error
+ * message and terminates the program
  * @line_number: Line number of the current operation
  */
 void print_empty_stack_error(int line_number)

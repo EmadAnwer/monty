@@ -81,6 +81,7 @@ stack_t *add_stackint_end(stack_t **head, const int n)
 /**
  * free_stack - free all the elements of a stack_t list.
  * @head: pointer to stack_t
+ * Return: Nothing
  */
 void free_stack(stack_t *head)
 {
